@@ -1,0 +1,25 @@
+{
+  "name": "snap-shot",
+  "version": "1.0.0",
+  "description": "mongoose express react node app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "Oussama",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.10.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0"
+  }
+}
