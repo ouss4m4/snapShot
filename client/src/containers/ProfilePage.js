@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Auth from '../helpers/Auth'
+import ProfileCard from '../components/ProfileCard'
 
-class Profile extends Component {
+class ProfilePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,18 +23,21 @@ class Profile extends Component {
             headers: myHeaders
         })
             .then(ans => ans.json())
-            .then(json => this.setState({fetching: false,  user: json}))
+            .then(json => {
+                this.setState({fetching: false,  user: json})
+                console.log(json)
+            })
             .catch(err => console.log(err))
     }
 
     render() {
         const {fetching, user} = this.state;
         return (
-            <div>
-                {fetching ? <i className='fa fa-spinner fa-spin'></i> : !user ? 'error' : `user : ${user.user.name} ` }
+            <div className='wrap'>
+                {fetching ? <i className='fa fa-spinner fa-spin'></i> : !user ? 'error' : <ProfileCard user={user.user}/> }
             </div>
         );
     }
 }
 
-export default Profile;
+export default ProfilePage;

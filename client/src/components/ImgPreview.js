@@ -3,7 +3,7 @@ import React from 'react';
 const ImgPreview = ({url}) => {
     return (
         <div style={style}>
-            <img src={url} style={style.img}/>
+            <img src={url} style={style.img} alt='preview'/>
         </div>
     );
 };

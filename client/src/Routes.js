@@ -8,7 +8,7 @@ import SinglePost from './containers/SinglePost'
 import LoginPage from './containers/LoginPage';
 import SignUpPage from './containers/SignUpPage';
 import NoMatch from './components/NoMatch'
-import Profile from  './components/Profile'
+import ProfilePage from  './containers/ProfilePage'
 import AddPostPage from './containers/AddPostPage'
 
 
@@ -20,7 +20,7 @@ const Routes = () => {
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path='/post/:id' component={SinglePost} />
-              <PrivateRoute path="/profile" component={Profile} />
+              <PrivateRoute path="/profile" component={ProfilePage} />
               <PrivateRoute path="/addpost" component={AddPostPage} />
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} />
