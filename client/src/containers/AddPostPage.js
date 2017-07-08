@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import AddPost from '../components/AddPost'
-import { Card, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
-import TextField from 'material-ui/TextField'
 import Auth from '../helpers/Auth'
 
 

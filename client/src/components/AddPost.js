@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardText } from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
-import Auth from '../helpers/Auth'
 import ImgPreview from './ImgPreview'
 
 
@@ -19,6 +18,7 @@ const AddPost = ({
                 <div className='field-line'>
                     <TextField
                         floatingLabelText='Title'
+                        hintText="a lovely title"
                         name='title'
                         type='text'
                         errorText={errors.title}
@@ -29,6 +29,7 @@ const AddPost = ({
                 <div className='field-line'>
                     <TextField
                         floatingLabelText='Details'
+                        hintText="location or time"
                         name='detail'
                         type='text'
                         multiLine={true}
@@ -42,6 +43,7 @@ const AddPost = ({
                 <div className='field-line'>
                     <TextField
                         floatingLabelText='image url'
+                        hintText="a valid image url"
                         name='imageUrl'
                         type='text'
                         errorText={errors.imageUrl}
