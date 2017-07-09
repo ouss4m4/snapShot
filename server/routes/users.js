@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/info', (req,res) => {
     
-    let token = req.headers.authorization
+    let token = req.headers.authorization.split(' ')[1]
     if(!token) {
         res.json({
             success: false,
@@ -14,7 +14,7 @@ router.get('/info', (req,res) => {
         })
         return
     }
-    let decoded = jwt.decode(token.split(' ')[1], config.jwtSecret)
+    let decoded = jwt.decode(token, config.jwtSecret)
     user.findById(decoded.sub, (err, user) => {
         if (err) { console.error(err)}
 
