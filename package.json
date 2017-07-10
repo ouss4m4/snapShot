@@ -4,7 +4,7 @@
   "description": "mongoose express react node app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "node index.js"
   },
   "author": "Oussama",
   "license": "MIT",
@@ -15,7 +15,6 @@
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.10.5",
-    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "validator": "^7.0.0"

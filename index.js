@@ -5,6 +5,8 @@ const App = express();
 const mongoose = require('mongoose')
 const config = require('./config')
 const passport = require('passport')
+const path = require('path');
+
 mongoose.connect(config.db)
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
@@ -33,9 +35,14 @@ App.use('/auth', authRoutes);
 App.use('/users', userRoutes);
 App.use('/posts', postRoutes);
 App.use('/comments', commentRoutes)
+App.use(express.static(path.resolve(__dirname, 'public')));
 
+// Always return the main index.html, so react-router render the route in the client
+App.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
 
-
-App.listen(3001, (req, res) => {
-    console.log('server up and running at 127.0.0.1:3001')
+const port = process.env.PORT || 8080;
+App.listen(port, (req, res) => {
+    console.log('server up and running at ' + port)
 })
