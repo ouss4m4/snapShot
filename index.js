@@ -5,7 +5,6 @@ const App = express();
 const mongoose = require('mongoose')
 const config = require('./config')
 const passport = require('passport')
-const path = require('path');
 
 mongoose.connect(config.db)
 mongoose.Promise = global.Promise;
