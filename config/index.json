@@ -1,4 +1,4 @@
 {
-    "db" : "mongodb://localhost:27017/snapShot",
+    "db" : "mongodb://sama:sama@ds155132.mlab.com:55132/snapshot",
     "jwtSecret" : "juggernaut"
 }
