@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-const cors = require('cors')
+const path = require('path')
 const App = express();
 const mongoose = require('mongoose')
 const config = require('./config')
@@ -13,7 +13,7 @@ let db = mongoose.connection;
 db.on('error', (err) => console.log(err))
 db.once('open', () => console.log('connected to mongodb'))
 
-App.use(cors())
+
 App.use(bodyParser.json())
 
 
