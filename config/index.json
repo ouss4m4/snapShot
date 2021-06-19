@@ -1,4 +1,4 @@
 {
-    "db" : "mongodb://sama:sama@ds155132.mlab.com:55132/snapshot",
-    "jwtSecret" : "juggernaut"
+    "db": "mongodb+srv://tester:tester2021@cluster0.huhga.mongodb.net/snapshots?retryWrites=true&w=majority",
+    "jwtSecret": "juggernaut"
 }
