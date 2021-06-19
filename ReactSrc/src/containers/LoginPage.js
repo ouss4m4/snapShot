@@ -11,8 +11,8 @@ class LoginPage extends Component {
             errors: {},
             infoMessage: '',
             user: {
-                email: '',
-                password: ''
+                email: 'tester@snapshot.com',
+                password: 'tester21'
             }
         };
     }
