@@ -10,7 +10,10 @@ const config = require('./config');
 
 const App = express();
 
-mongoose.connect(config.db);
+mongoose.connect(config.db, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 
