@@ -14,12 +14,13 @@ module.exports = (req, res, next) => {
     }
 
     const userId = decoded.sub;
-
+    console.log('decoded sub', decoded.sub);
     return User.findById(userId, (userErr, user) => {
       if (userErr || !user) {
         return res.status(401).end();
       }
       res.locals.user = decoded.sub;
+      console.log('res.locals.user', res.locals.user);
       return next();
     });
   });

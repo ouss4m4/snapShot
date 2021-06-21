@@ -24,7 +24,7 @@ const postSchema = Schema(
   { timestamps: true }
 );
 
-postSchema.pre('validate', function saveHook(next) {
+/* postSchema.pre('validate', function saveHook(next) {
   const post = this;
 
   let decoded = jwt.decode(post.author, config.jwtSecret);
@@ -32,7 +32,7 @@ postSchema.pre('validate', function saveHook(next) {
     return user.findById(decoded.sub, (err, user) => {
       if (err) {
         return next(err);
-      }
+      } 
       if (!user) {
         return;
       }
@@ -43,7 +43,7 @@ postSchema.pre('validate', function saveHook(next) {
   }
   var err = new Error('invalid token');
   return next(err);
-});
+}); */
 
 const Post = mongoose.model('Post', postSchema);
 

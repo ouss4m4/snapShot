@@ -1,7 +1,10 @@
 const express = require('express');
-const passport = require('passport');
 const path = require('path');
+const passport = require('passport');
 const mongoose = require('mongoose');
+
+const localSignup = require('./server/passport/local-signup');
+const localLogin = require('./server/passport/local-login');
 // @TODO: change locals vars en ENV
 const config = require('./config');
 
@@ -15,9 +18,6 @@ db.on('error', (err) => console.log(err));
 db.once('open', () => console.log('connected to mongodb'));
 
 App.use(express.json());
-
-const localSignup = require('./server/passport/local-signup');
-const localLogin = require('./server/passport/local-login');
 passport.use('local-signup', localSignup);
 passport.use('local-login', localLogin);
 
