@@ -18,7 +18,7 @@ const commentSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-commentSchema.pre('validate', function saveHook(next) {
+/* commentSchema.pre('validate', function saveHook(next) {
   const comment = this;
   let decoded = jwt.decode(comment.author, config.jwtSecret);
   if (decoded) {
@@ -37,7 +37,7 @@ commentSchema.pre('validate', function saveHook(next) {
   console.log('validated comment', comment);
   var err = new Error('invalid token');
   return next(err);
-});
+}); */
 
 commentSchema.post('save', function (comment) {
   let update = comment._id;

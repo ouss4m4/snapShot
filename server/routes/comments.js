@@ -1,5 +1,6 @@
 const express = require('express');
 const Comment = require('../models/comment');
+const verifyToken = require('../middleware/auth-check');
 
 const router = express.Router();
 
@@ -21,12 +22,12 @@ router.get('/bypost/:id', (req, res) => {
   }
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', verifyToken, (req, res) => {
   try {
     let data = {
       text: req.body.text,
       post: req.body.post,
-      author: req.headers.authorization.split(' ')[1],
+      author: res.locals.user,
     };
     const newComment = new Comment(data);
 

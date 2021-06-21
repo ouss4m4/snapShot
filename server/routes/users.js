@@ -3,8 +3,9 @@ const config = require('../../config/');
 const user = require('../models/user');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
+const verifyToken = require('../middleware/auth-check');
 
-router.get('/info', (req, res) => {
+router.get('/info', verifyToken, (req, res) => {
   try {
     let token = req.headers.authorization.split(' ')[1];
     if (!token) {
