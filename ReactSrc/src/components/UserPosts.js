@@ -14,7 +14,6 @@ const UserPosts = ({ posts }) => {
     },
     gridList: {
       maxWidth: 960,
-      maxHeight: 550,
       overflowY: 'auto',
     },
   };
@@ -22,7 +21,7 @@ const UserPosts = ({ posts }) => {
 
   return (
     <div style={styles.root}>
-      <GridList cellHeight={180} style={styles.gridList}>
+      <GridList cellHeight={250} style={styles.gridList}>
         <Subheader>Your Posts</Subheader>
         {tilesData.map((tile) => (
           <GridTile

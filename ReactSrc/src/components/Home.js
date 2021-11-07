@@ -12,11 +12,11 @@ import { Link } from 'react-router-dom';
 const Home = ({ posts }) => {
   return (
     <div>
-      <h1 style={{ textAlign: 'center', color: '#00bcd4' }}> Images </h1>
+      <h1 style={{ textAlign: 'center', color: '#00bcd4' }}> Feed </h1>
       <div style={style.grid}>
         {posts.map((p) => (
           <div style={style.single} key={p._id}>
-            <Card>
+            <Card style={{ height: '100%' }}>
               <CardHeader
                 title={p.author.name}
                 subtitle={p.author.email}
@@ -57,9 +57,11 @@ const style = {
     flexWrap: 'wrap',
   },
   single: {
-    width: '55vw',
+    width: '90vw',
     maxHeight: '950px',
     margin: '25px auto',
+    maxWidth: '750px',
+    height: '100%',
   },
 };
 

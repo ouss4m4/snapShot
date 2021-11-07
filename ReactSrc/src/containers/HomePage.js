@@ -55,7 +55,7 @@ class HomePage extends Component {
         ) : fetched && posts ? (
           <Home posts={posts} />
         ) : (
-          'wtf'
+          'errors ofc'
         )}
       </div>
     );
