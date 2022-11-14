@@ -10,7 +10,7 @@
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
